@@ -1,0 +1,9 @@
+version: '3.9'
+
+services: # services = container
+  web:
+    image: nginx
+    volumes:
+      - ./public_html:/usr/share/nginx/public_html
+    ports:
+      - 8080:80 #primeiro parametro = minha máquina
