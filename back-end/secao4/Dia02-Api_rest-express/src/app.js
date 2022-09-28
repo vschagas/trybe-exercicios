@@ -52,3 +52,9 @@ app.put('/tasks/:task', (req, res) => {
 app.get('/users', (req, res) => res.status(200).json([{ name: 'Thiago', age: 10 }]));
 
 module.exports = app;
+
+// Comandos para derrubar processos node / docker
+
+// docker stop $(docker ps -aq) 
+// lsof -p 3001 
+// ps aux | grep 3001 
