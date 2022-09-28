@@ -58,3 +58,4 @@ module.exports = app;
 // docker stop $(docker ps -aq) 
 // lsof -p 3001 
 // ps aux | grep 3001 
+// app.use(express.json()) 
