@@ -11,6 +11,8 @@ type Payload = {
   email: string,
 }
 
+// verificar generate token
+
 const verifyJWT = async (token: string): Promise<TUser> => {
 	const decoded = jwt.verify(token, SECRET) as Payload;
 	return userModel.getByEmail(decoded.email); 
