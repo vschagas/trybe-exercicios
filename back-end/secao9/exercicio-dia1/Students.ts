@@ -57,6 +57,22 @@ class Student {
 
     this._worksGrades = value;
   }
+
+  sumGrades(): number {
+  return [...this.examsGrades, ...this.worksGrades]
+    .reduce((previousNote, note) => {
+      const nextNote = note + previousNote;
+
+      return nextNote;
+    }, 0);
+  }
+
+  sumAverageGrade(): number {
+    const sumGrades = this.sumGrades();
+    const divider = this.examsGrades.length + this.worksGrades.length;
+
+    return Math.round(sumGrades / divider);
+  }
 }
 
 // Para testar!
@@ -64,6 +80,12 @@ class Student {
 const personOne = new Student('202001011', 'Maria da Silva');
 
 console.log(personOne);
+
+personOne.examsGrades = [25, 20, 23, 23];
+personOne.worksGrades = [45, 45];
+
+console.log('Soma de todas as notas: ', personOne.sumGrades());
+console.log('Média de todas as notas: ', personOne.sumAverageGrade());
 
 const personTwo = new Student('202001012', 'João da Silva');
 
